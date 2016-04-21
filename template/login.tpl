@@ -2,7 +2,7 @@
 <div id="login">
     <form action="../Final-Ecommerce/loginValid.php" method="get">
         <center>
-            <h1 id="welcome">Toys4U</h1>
+            <h1 id="welcome"></h1>
         </center>
 
         <center>
