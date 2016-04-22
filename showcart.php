@@ -1,7 +1,6 @@
 <?php
 
 include 'toys.php';
-include_once 'admin.php';
 require_once './Twig/Autoloader.php';
 
 session_start();
@@ -12,7 +11,7 @@ $loader = new Twig_Loader_Filesystem('./template');//the template folder
 $twig = new Twig_Environment($loader);
 
 
-$grocery = new toys();
+$toy = new toys();
 $i = 0;
 ////$qty[] = null;
 $tid = null;
@@ -28,12 +27,12 @@ if (isset($_GET['toy_id'])) {
         $addItem = $cc->fetch_array(MYSQLI_ASSOC);
 
         $_SESSION['cart'][$tid] = [
-            'item' => $addItem['toy_Id'],
+            'item' => $addItem['toy_id'],
             'toy_name' => $addItem['toy_name'],
             'toy_Type' => $addItem['toy_type'],
             'quantity' => 1,
-            'Price' => $addItem['Price'],
-            'total' => $addItem['Price']
+            'price' => $addItem['price'],
+            'total' => $addItem['price']
         ];
     }
 }
@@ -56,8 +55,8 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
                     'toy_name' => $addItem['toy_name'],
                     'toy_Type' => $addItem['toy_type'],
                     'quantity' => $_SESSION['cart'][$id]['quantity'],
-                    'Price' => $addItem['Price'],
-                    'total' => $addItem['Price'] * $_SESSION['cart'][$id]['quantity']
+                    'price' => $addItem['price'],
+                    'total' => $addItem['price'] * $_SESSION['cart'][$id]['quantity']
                 ];
 //                echo "end at break";
                 break;
@@ -72,8 +71,8 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
                     'toy_name' => $addItem['toy_name'],
                     'toy_Type' => $addItem['toy_type'],
                     'quantity' => $_SESSION['cart'][$id]['quantity'],
-                    'Price' => $addItem['Price'],
-                    'total' => $addItem['Price'] * $_SESSION['cart'][$id]['quantity']
+                    'price' => $addItem['price'],
+                    'total' => $addItem['price'] * $_SESSION['cart'][$id]['quantity']
                 ];
 
                 if($_SESSION['cart'][$id]['quantity']<= 0){
@@ -99,7 +98,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     }
 }
 
-$numPerPage = 3;
+$numPerPage = 10;
 ////
 if (isset($_REQUEST['page'])) {
     $page = $_REQUEST['page'];

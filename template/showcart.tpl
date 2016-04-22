@@ -11,11 +11,12 @@
                             <table class="table">
                                 <thead>
                                 <tr>
+                                    <th>toy_id</th>
                                     <th>Toy Name</th>
                                     <th>Toy Type</th>
                                     <th>Manufacturer</th>
                                     <th>Price</th>
-                                    <th></th>
+                                    <th>Quantity</th>
                                 </tr>
                                 </thead>
 
@@ -23,12 +24,12 @@
                                 {% for x in alltoys %}
                                     <tr class="active">
                                         <th>
-                                            <a href="displayCart.php?Grocery_Id={{ x.Grocery_id }}">{{ x.toy_name }}</a>
+                                            <a href="showcart.php?toy_id={{ x.toy_id }}">{{ x.toy_id }}</a>
                                         </th>
+                                        <td>{{x.toy_name}}</td>
                                         <td>{{x.toy_type}}</td>
-<!--                                        <td>{{x.Grocery_type}}</td>-->
                                         <td>{{x.man_name}}</td>
-<!--                                        <td>{{x.Brand_name}}</td>-->
+                                        <td>{{x.quantity}}</td>
                                         <td>{{x.price}}</td>
                                         <td>
                                             <button class="btn btn_1" style="background-color: #00aaf1">Edit</button>
@@ -53,7 +54,7 @@
                                     <th>Toy Name</th>
                                     <th>Toy Type</th>
                                     <th>Price</th>
-                                    <th>Qty</th>
+                                    <th>Quantity</th>
                                     <th>Total</th>
                                     <th></th>
                                     <th></th>
@@ -64,7 +65,7 @@
                                 {% for cart in carts %}
                                     <tr class="active">
                                         <td>{{ cart.toy_name }}</td>
-                                        <td>{{ cart.tory_Type }}</td>
+                                        <td>{{ cart.toy_Type }}</td>
                                         <td>${{ cart.Price }}</td>
                                         <td>{{ cart.quantity }}</td>
                                         <td>${{ cart.total }}</td>
