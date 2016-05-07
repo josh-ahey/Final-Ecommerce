@@ -1,0 +1,5 @@
+ErrorDocument 404 /stuff/Final-Ecommerce/404.html
+AuthName "Restricted Area"
+AuthType Basic
+AuthuserFile C:\temp\.htpasswd
+require valid-user
