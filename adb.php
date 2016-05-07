@@ -2,10 +2,10 @@
 <?php
     
 define("DB_HOST", 'localhost');
-define("DB_NAME", 'toystore');
+define("DB_NAME", 'ashesics_aherdemla_joshua');
 define("DB_PORT", 3306);
-define("DB_USER","root");
-define("DB_PWORD","");
+define("DB_USER","ashesics_aj7519");
+define("DB_PWORD","ooz8znpmop76");
 
 
 class adb extends mysqli
