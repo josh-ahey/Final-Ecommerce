@@ -1,13 +1,11 @@
 {% extends "index.html"%} {# this is a comment#} {% block middle %}{% endblock %}
 {% block content %}
 <!-- table body beginning --> 
-<!--
-        <div id="page-wrapper">
+<!--        <div id="page-wrapper">-->
             <div class="graphs">
                 <div class="col-sm-12">
                     <div class="xs tabls">
                         <div class="bs-example4" data-example-id="contextual-table">
--->
                             <table class="table">
                                 <thead>
                                 <tr>
